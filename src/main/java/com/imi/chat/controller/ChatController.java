@@ -1,6 +1,6 @@
 package com.imi.chat.controller;
 
-import com.imi.chat.model.ChatMessage;
+import com.imi.chat.model.dto.ChatMessage;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
