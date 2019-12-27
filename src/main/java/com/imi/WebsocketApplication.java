@@ -1,12 +1,12 @@
-package com.imi.chat;
+package com.imi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebsocketDemoApplication {
+public class WebsocketApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WebsocketDemoApplication.class, args);
+		SpringApplication.run(WebsocketApplication.class, args);
 	}
 }
