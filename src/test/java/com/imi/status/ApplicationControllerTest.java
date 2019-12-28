@@ -2,6 +2,7 @@ package com.imi.status;
 
 import com.imi.status.controller.ApplicationController;
 import com.imi.status.service.ApplicationService;
+import com.imi.status.service.BuildInfoService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class ApplicationControllerTest {
 	@MockBean
 	private ApplicationService applicationService;
 
+	@MockBean
+	private BuildInfoService buildInfoService;
+
 	@Test
 	void getApplicationStatusTest() {
 		applicationController.getApplicationStatus();
@@ -28,7 +32,7 @@ public class ApplicationControllerTest {
 	@Test
 	void getBuildVersionTest() {
 		applicationController.getBuildVersion();
-		Mockito.verify(applicationService, Mockito.times(1)).getBuilldVersion();
+		Mockito.verify(buildInfoService, Mockito.times(1)).getBuilldVersion();
 	}
 
 }

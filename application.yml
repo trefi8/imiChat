@@ -1,4 +1,0 @@
-spring:
-  data.rest.basePath: /api
-app:
-  buildVersion: 1.0.0.0

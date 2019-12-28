@@ -2,6 +2,7 @@ package com.imi.chat.controller;
 
 import com.imi.chat.model.dto.ChatMessage;
 import com.imi.chat.model.common.MessageType;
+import com.imi.chat.service.ChatService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class WebSocketEventListener {
     @Autowired
     private SimpMessageSendingOperations messagingTemplate;
 
+    @Autowired
+    private ChatService chatService;
+
     @EventListener
     public void handleWebSocketConnectListener(SessionConnectedEvent event) {
         logger.info("Received a new web socket connection");
@@ -37,6 +41,10 @@ public class WebSocketEventListener {
             chatMessage.setType(MessageType.LEAVE);
             chatMessage.setSender(username);
 
+            StringBuilder b = new StringBuilder();
+            chatService.getMessagesBySender(username).forEach(b::append);
+
+            logger.info(b.toString());
             messagingTemplate.convertAndSend("/topic/public", chatMessage);
         }
     }
