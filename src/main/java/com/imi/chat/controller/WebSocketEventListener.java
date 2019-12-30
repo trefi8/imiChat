@@ -45,7 +45,7 @@ public class WebSocketEventListener {
             chatService.getMessagesBySender(username).forEach(b::append);
 
             logger.info(b.toString());
-            messagingTemplate.convertAndSend("/topic/public", chatMessage);
+            messagingTemplate.convertAndSend("/topic/javainuse", chatMessage);
         }
     }
 }

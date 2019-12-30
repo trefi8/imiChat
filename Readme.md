@@ -1,9 +1,3 @@
-## Spring Boot WebSocket Chat Appplication
-
-You can checkout the live version of the application at https://spring-ws-chat.herokuapp.com/
-
-![App Screenshot](screenshot.png)
-
 ## Requirements
 
 1. Java - 1.8.x
@@ -15,15 +9,15 @@ You can checkout the live version of the application at https://spring-ws-chat.h
 **1. Clone the application**
 
 ```bash
-git clone https://github.com/callicoder/spring-boot-websocket-chat-demo.git
+git clone https://github.com/trefi8/imiChat
 ```
 
 **2. Build and run the app using maven**
 
 ```bash
-cd spring-boot-websocket-chat-demo
+cd imiChat
 mvn package
-java -jar target/websocket-demo-0.0.1-SNAPSHOT.jar
+java -jar target/imiChat-0.0.1-SNAPSHOT.jar
 ```
 
 Alternatively, you can run the app directly without packaging it like so -
@@ -32,8 +26,22 @@ Alternatively, you can run the app directly without packaging it like so -
 mvn spring-boot:run
 ```
 
-## Learn More
+## Websocket Chat Flow
 
-You can find the tutorial for this application on my blog -
+![Websocket Chat flow](./spring-boot-websocket-chat-flow.jpg)
+
+## References
+
+You can find the tutorial for websocket chat application -
+
+https://dzone.com/articles/build-a-chat-application-using-spring-boot-websock
 
 https://www.callicoder.com/spring-boot-websocket-chat-example/
+
+Info for the lombok, H2 embedded DB, Spring Data -
+
+https://www.baeldung.com/
+
+
+
+

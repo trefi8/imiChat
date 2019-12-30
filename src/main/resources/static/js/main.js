@@ -34,10 +34,10 @@ function connect(event) {
 
 function onConnected() {
     // Subscribe to the Public Topic
-    stompClient.subscribe('/topic/public', onMessageReceived);
+    stompClient.subscribe('/topic/javainuse', onMessageReceived);
 
     // Tell your username to the server
-    stompClient.send("/app/chat.addUser",
+    stompClient.send("/app/chat.newUser",
         {},
         JSON.stringify({sender: username, type: 'JOIN'})
     )
@@ -52,7 +52,7 @@ function onError(error) {
 }
 
 
-function sendMessage(event) {
+function chatMessage(event) {
     var messageContent = messageInput.value.trim();
 
     if(messageContent && stompClient) {
@@ -62,7 +62,7 @@ function sendMessage(event) {
             type: 'CHAT'
         };
 
-        stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
+        stompClient.send("/app/chat.chatMessage", {}, JSON.stringify(chatMessage));
         messageInput.value = '';
     }
     event.preventDefault();
@@ -118,4 +118,4 @@ function getAvatarColor(messageSender) {
 }
 
 usernameForm.addEventListener('submit', connect, true)
-messageForm.addEventListener('submit', sendMessage, true)
+messageForm.addEventListener('submit', chatMessage, true)
