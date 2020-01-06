@@ -25,6 +25,21 @@ Alternatively, you can run the app directly without packaging it like so -
 ```bash
 mvn spring-boot:run
 ```
+## Rest Interface
+
+```bash
+http://localhost:8080/api/application/status
+```
+
+Please note, Build Info(version number etc.) only available after 'mvn package' action ran as this would create the necessary meta
+ info
+```bash
+http://localhost:8080/api/application/version
+```
+
+## Unit Test
+
+Tests are running during 'mvn package', covers basic Rest Interface validation found in ApplicationController 
 
 ## Websocket Chat Flow
 
@@ -38,7 +53,7 @@ https://dzone.com/articles/build-a-chat-application-using-spring-boot-websock
 
 https://www.callicoder.com/spring-boot-websocket-chat-example/
 
-Info for the lombok, H2 embedded DB, Spring Data -
+Info for the lombok, H2 embedded DB, Spring Data, Unit Test -
 
 https://www.baeldung.com/
 
